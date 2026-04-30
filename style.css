@@ -3,13 +3,45 @@ body {
     font-weight: 500;
     margin: 0;
     padding: 0;
-    background-color: #e7e0f8;
-    color: #222;
+    min-height: 100vh;
+    background: #020927;
+    color: #e8f3ff;
+    overflow-x: hidden;
+}
+
+.bubble-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 20% 20%, rgba(104, 126, 255, 0.18), transparent 18%),
+                radial-gradient(circle at 80% 15%, rgba(135, 189, 255, 0.14), transparent 16%),
+                radial-gradient(circle at 40% 80%, rgba(68, 120, 255, 0.12), transparent 20%),
+                linear-gradient(180deg, #05112b 0%, #02113d 50%, #020927 100%);
+    overflow: hidden;
+}
+
+.bubble-bg span {
+    position: absolute;
+    width: calc(var(--size) * 1px);
+    height: calc(var(--size) * 1px);
+    left: var(--left);
+    top: var(--top);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    filter: blur(4px);
+    animation: floatBubble var(--duration) ease-in-out infinite;
+    animation-delay: var(--delay);
+}
+
+@keyframes floatBubble {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+    50% { transform: translate(20px, -40px) scale(1.07); opacity: 0.55; }
+    100% { transform: translate(-10px, 20px) scale(0.95); opacity: 0.7; }
 }
 
 header {
-    background: linear-gradient(135deg, #bb8cff 0%, #8b49ff 45%, #5d1dff 100%);
-    color: #f7eefc;
+    background: linear-gradient(135deg, #041b47 0%, #0f2a68 45%, #132f83 100%);
+    color: #eef7ff;
     text-align: center;
     padding: 2rem 1.25rem;
 }
@@ -17,14 +49,14 @@ header {
 header h1 {
     font-weight: 800;
     letter-spacing: 0.05em;
-    color: #3c0e6a;
+    color: #d8e8ff;
     margin: 0;
     font-size: clamp(2.25rem, 5vw, 3.5rem);
 }
 
 header .subtitle {
     margin-top: 0.75rem;
-    color: #5f3a94;
+    color: #b8d4ff;
     font-size: 1.05rem;
     font-weight: 600;
 }
@@ -43,8 +75,8 @@ main {
 
 .tab {
     border: none;
-    background: rgba(255,255,255,0.75);
-    color: #3c0e6a;
+    background: rgba(94, 168, 9, 0.75);
+    color: #17028a;
     padding: 0.75rem 1.2rem;
     border-radius: 999px;
     cursor: pointer;
@@ -87,7 +119,7 @@ main {
     height: auto;
     margin: 0.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(62, 236, 3, 0.12);
 }
 
 header h1 {
