@@ -3,13 +3,13 @@ body {
     font-weight: 500;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #e7e0f8;
     color: #222;
 }
 
 header {
-    background: linear-gradient(135deg, #e8d7ff 0%, #d8b8ff 45%, #c397ff 100%);
-    color: #2b0c59;
+    background: linear-gradient(135deg, #bb8cff 0%, #8b49ff 45%, #5d1dff 100%);
+    color: #f7eefc;
     text-align: center;
     padding: 2rem 1.25rem;
 }
