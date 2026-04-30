@@ -12,11 +12,11 @@ body {
 .bubble-bg {
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: -2;
     background: radial-gradient(circle at 20% 20%, rgba(104, 126, 255, 0.18), transparent 18%),
                 radial-gradient(circle at 80% 15%, rgba(135, 189, 255, 0.14), transparent 16%),
-                radial-gradient(circle at 40% 80%, rgba(68, 120, 255, 0.12), transparent 20%),
-                linear-gradient(180deg, #05112b 0%, #02113d 50%, #020927 100%);
+                radial-gradient(circle at 40% 80%, rgba(76, 126, 255, 0.12), transparent 20%),
+                linear-gradient(180deg, #020927 0%, #081f4f 45%, #13296f 100%);
     overflow: hidden;
 }
 
@@ -26,9 +26,9 @@ body {
     height: calc(var(--size) * 1px);
     left: var(--left);
     top: var(--top);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(173, 216, 255, 0.12);
     border-radius: 50%;
-    filter: blur(4px);
+    filter: blur(5px);
     animation: floatBubble var(--duration) ease-in-out infinite;
     animation-delay: var(--delay);
 }
@@ -40,8 +40,8 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #041b47 0%, #0f2a68 45%, #132f83 100%);
-    color: #eef7ff;
+    background: linear-gradient(135deg, #061bdd 0%, #33bb0a 45%, #0592d4 100%);
+    color: #0c97e2d7;
     text-align: center;
     padding: 2rem 1.25rem;
 }
@@ -75,8 +75,8 @@ main {
 
 .tab {
     border: none;
-    background: rgba(94, 168, 9, 0.75);
-    color: #17028a;
+    background: rgba(15, 72, 141, 0.85);
+    color: #eaf4ff;
     padding: 0.75rem 1.2rem;
     border-radius: 999px;
     cursor: pointer;
@@ -85,13 +85,13 @@ main {
 }
 
 .tab:hover {
-    background: rgba(255,255,255,0.95);
+    background: rgba(35, 96, 176, 0.95);
     transform: translateY(-1px);
 }
 
 .tab.active {
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(110, 45, 190, 0.12);
+    background: #2a5cc0;
+    box-shadow: 0 8px 24px rgba(38, 80, 165, 0.3);
 }
 
 .content-section {
@@ -119,12 +119,64 @@ main {
     height: auto;
     margin: 0.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(62, 236, 3, 0.12);
+    box-shadow: 0 2px 8px rgba(221, 141, 3, 0.613);
+    cursor: pointer;
 }
 
-header h1 {
-    font-weight: 800;
-    letter-spacing: 0.05em;
+.watermark {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(4rem, 12vw, 10rem);
+    color: rgba(255,255,255,0.08);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.modal-close:hover {
+    opacity: 1;
 }
 
 p {
@@ -137,7 +189,7 @@ body::after {
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    color: rgba(0, 0, 0, 0.12);
+    color: rgba(8, 129, 199, 0.381);
     font-size: 0.9rem;
     font-weight: 700;
     pointer-events: none;
